@@ -27,10 +27,10 @@
 	sw $s1, 0($sp) 
 	
 	slt $t1, $a1, $a0	
-	beq $t1, 0, a_less_b
+	beq $t1, 0, else
 	sub $v0, $a1, $a0
 	j return
-	a_less_b:
+	else:
 	sub $v0, $a0, $a1
 	jr $ra
 	return:
