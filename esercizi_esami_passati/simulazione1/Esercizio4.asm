@@ -2,7 +2,7 @@
 #Non posso usare MACRO
 .text
 	main:
-	addi $s0 $zero, 18	#int x = 18
+	addi $s0 $zero, 31	#int x = 18
 	addi $s1, $zero, 0	#int y
 	addi $s2, $zero, 0	#int n
 	addi $s3, $zero, 0	#int i
