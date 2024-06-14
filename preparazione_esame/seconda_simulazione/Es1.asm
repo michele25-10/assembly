@@ -12,21 +12,21 @@
 	addi $t1, $zero, 32	#max condizione
 	
 	while:
+	#while (i<32)
 	slt $t2, $s3, $t1
 	beq $t2, $zero, end
-	andi $t0, $s1, 1
+	andi $t0, $s1, 1	#tmp=y & 1;
 	beq $t0, $zero, continue
-	add $s2, $s2, $s0
+	add $s2, $s2, $s0	#p=p+x;
 	continue:
-	srl $s1, $s1, 1
-	sll $s0, $s0, 1
-	addi $s3, $s3, 1
+	srl $s1, $s1, 1		#y=y>>1;
+	sll $s0, $s0, 1		#x=x<<1;
+	addi $s3, $s3, 1	#i=i+1;
 	j while
 		
 	end:
 	add $a0, $s2, $zero 
 	addi $v0, $zero, 1
 	syscall	
-	
 	addi $v0, $zero, 10
 	syscall	
